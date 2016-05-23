@@ -2,15 +2,14 @@ jQuery(function($) {
 	$(document).ready(function() {
 		
 		// Show/Hide Description
-		var shown = true;
-		$(document).on('click','.contact',function() {
-			if ( $(this).hasClass('shown_children') ) {
-				$('.shown_children').removeClass('shown_children');
-			} else {
-				$('.shown_children').removeClass('shown_children');
-				$(this).addClass('shown_children');	
-			}
-		});
+		// $(document).on('click','.contact',function() {
+		// 	if ( $(this).hasClass('shown_children') ) {
+		// 		$('.shown_children').removeClass('shown_children');
+		// 	} else {
+		// 		$('.shown_children').removeClass('shown_children');
+		// 		$(this).addClass('shown_children');	
+		// 	}
+		// });
 
 		// Save Contact as Card
 		$('.submit').on('click',function() {
@@ -25,6 +24,13 @@ jQuery(function($) {
 			} else {
 				alert('Please enter a first name, last name, and description.');
 			}
+		});
+
+
+		$(document).on('click','.contact',function() {
+			$(this).children().each(function(){
+				$(this).toggle();
+			});
 		});
 	});
 });
